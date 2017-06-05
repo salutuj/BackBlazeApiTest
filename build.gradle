@@ -7,7 +7,9 @@
  */
 
 // Apply the java-library plugin to add support for Java Library
+apply plugin: 'java'
 apply plugin: 'java-library'
+apply plugin: 'eclipse-wtp'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -25,5 +27,11 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+ 
+    compile("org.springframework.boot:spring-boot-starter-web:1.5.3.RELEASE")   
+    compile 'synapticloop:backblaze-b2-java-api:2.2.0'
 }
 
+task helloWorld << {
+  println 'Welcome to JCG Gradle Tutorial'
+}
